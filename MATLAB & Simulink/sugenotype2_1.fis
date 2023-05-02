@@ -1,0 +1,37 @@
+[System]
+Name='sugenotype2_1'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=5
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input'
+Range=[-1 1]
+NumMFs=5
+MF1='PBU':'gaussmf',[0.2123 0.998448810754912]
+MF2='NSU':'gaussmf',[0.2123 -0.480351602895554]
+MF3='ZU':'gaussmf',[0.2123 0.0077559462254394]
+MF4='PSU':'gaussmf',[0.2123 0.502068252326784]
+MF5='NBU':'gaussmf',[0.228798685599823 -0.999482936918304]
+
+[Output1]
+Name='output'
+Range=[0 30]
+NumMFs=3
+MF1='HIGH':'linear',[0 0.85]
+MF2='MED':'linear',[0 0.7]
+MF3='LOW':'linear',[0 0.5]
+
+[Rules]
+5, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 2 (1) : 1
+1, 1 (1) : 1
