@@ -15,7 +15,7 @@ num = 1;
 %den = [1 2 1];
 den = [0.85, 1.3, 1.2];
 P = tf(num, den);
-
+disp(P)
 sys_z = tf([0.0126, 0, 2.534], [1, 1.725, 0.0724]);
 sys_x = tf([3.312, 195.264], [1, 174.657 3.123]);
 sys_y = tf([0.00472, 0.945], [1, 0.85, 0.232]);
@@ -25,7 +25,7 @@ G = feedback(P*M, 1);
 %G = feedback(P*M, 1);
 
 % Define the simulation time and input signal
-t = 0:0.01:100;
+t = 5:0.01:30;
 r = ones(size(t)); % Step input
 
 % Simulate the system and plot the results
